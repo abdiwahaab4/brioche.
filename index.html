@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRIOCHE Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #FF8C00; /* Orange */
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            position: static;
+            width: 100%;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Sections */
+        .section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* Menu Section */
+        .menu {
+            background-color:#FF8C00 ;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Add transition effect to menu items */
+        .item {
+            background: white;
+            color: black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-out;
+        }
+
+        .item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add hover effect to menu items */
+        .item:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .order-btn {
+            background-color: #FF8C00;
+            color: black;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Order Section */
+        .order {
+            background-color: #111;
+        }
+
+        .order-container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .order label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .order input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #FF8C00;
+            border-radius: 5px;
+        }
+
+        .order-list {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .order button {
+            background-color: #FF8C00;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #totalPrice {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF8C00;
+            margin-top: 10px;
+        }
+
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .home-image {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .home-image.active {
+            opacity: 1;
+        }
+
+        .adds-on-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .adds-on-items .item {
+            background: white;
+            color: black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .adds-on-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="brioche.jpg" alt="BRIOCHE Logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#adds-on">Adds On</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Welcome to BRIOCHE</h1>
+        <p>Delicious burgers & crispy fries, made fresh for you!</p>
+        <div class="image-slider">
+            <img src="images/br.jpg" alt="Delicious Food" class="home-image active">
+            <img src="images/beef.jpg" alt="Delicious Food" class="home-image">
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu section">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="item">
+                <h3>Classic Beef Burger</h3>
+                <img src="single beef.jpg" alt="Classic Burger" width="150" class="menu-image">
+                <p>$5.00</p>
+                <button class="order-btn" onclick="addToOrder('Classic Burger', 5)">Order</button>
+            </div>
+            <div class="item">
+                <h3>Cheese Burger</h3>
+                <img src="images/cheese-burger.jpg" alt="Cheese Burger" width="150" class="menu-image">
+                <p>$6.00</p>
+                <button class="order-btn" onclick="addToOrder('Cheese Burger', 6)">Order</button>
+            </div>
+            <div class="item">
+                <h3>Fries</h3>
+                <img src="images/fries.jpg" alt="Fries" width="150" class="menu-image">
+                <p>$3.50</p>
+                <button class="order-btn" onclick="addToOrder('Fries', 3.50)">Order</button>
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+    </section>
+
+    <!-- Adds On Section -->
+    <section id="adds-on" class="adds-on section">
+        <h2>Adds On</h2>
+        <p>Explore our additional offerings to complement your meal!</p>
+        <div class="adds-on-items">
+            <div class="item">
+                <h3>Garlic Sauce</h3>
+                <img src="images/garlic-sauce.jpg" alt="Garlic Sauce" width="150" class="adds-on-image">
+                <p>$1.00</p>
+            </div>
+            <div class="item">
+                <h3>Cocktail Sauce</h3>
+                <img src="images/cocktail-sauce.jpg" alt="Cocktail Sauce" width="150" class="adds-on-image">
+                <p>$1.50</p>
+            </div>
+            <div class="item">
+                <h3>Dynamite Sauce</h3>
+                <img src="images/dynamite-sauce.jpg" alt="Dynamite Sauce" width="150" class="adds-on-image">
+                <p>$2.00</p>
+            </div>
+            <div class="item">
+                <h3>Honey</h3>
+                <img src="images/honey.jpg" alt="Honey" width="150" class="adds-on-image">
+                <p>$1.75</p>
+            </div>
+            <div class="item">
+                <h3>Maple Sriracha Sauce</h3>
+                <img src="images/maple-sriracha-sauce.jpg" alt="Maple Sriracha Sauce" width="150" class="adds-on-image">
+                <p>$2.25</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order section">
+        <h2>Place Your Order</h2>
+        <div class="order-container">
+            <label for="customerName">Name:</label>
+            <input type="text" id="customerName" name="customerName">
+
+            <label for="customerNumber">Number:</label>
+            <input type="text" id="customerNumber" name="customerNumber" pattern="\d{10,}" title="Please enter at least 10 digits">
+
+            <h3>Your Order:</h3>
+            <ul id="orderList" class="order-list"></ul>
+
+            <p id="totalPrice">Total Price: $0.00</p>
+            <button onclick="placeOrder()">Submit Order</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us for any inquiries or feedback!</p>
+        <!-- Add your contact form or contact details here -->
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        });
+
+        let orderItems = [];
+        let totalPrice = 0;
+
+        function addToOrder(item, price) {
+            orderItems.push({ item, price });
+            updateOrderList();
+        }
+
+        function updateOrderList() {
+            let orderList = document.getElementById("orderList");
+            let total = document.getElementById("totalPrice");
+            orderList.innerHTML = "";
+            totalPrice = 0;
+
+            orderItems.forEach((order, index) => {
+                let li = document.createElement("li");
+                li.textContent = `${order.item} - $${order.price.toFixed(2)}`;
+
+                let removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.onclick = () => removeFromOrder(index);
+
+                li.appendChild(removeButton);
+                orderList.appendChild(li);
+                totalPrice += order.price;
+            });
+
+            total.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+        }
+
+        function removeFromOrder(index) {
+            orderItems.splice(index, 1);
+            updateOrderList();
+        }
+
+        function placeOrder() {
+            let customerName = document.getElementById("customerName").value.trim();
+            let customerNumber = document.getElementById("customerNumber").value.trim();
+
+            if (customerName === "" || customerNumber === "" || orderItems.length === 0) {
+                alert("Please enter your name, number, and select items.");
+                return;
+            }
+
+            if (customerNumber.length < 10 || !/^\d+$/.test(customerNumber)) {
+                alert("Please enter a valid number with at least 10 digits.");
+                return;
+            }
+
+            alert(`Order placed successfully!\n\nCustomer: ${customerName}\nNumber: ${customerNumber}\nTotal: $${totalPrice.toFixed(2)}`);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll('.home-image');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNextImage, 3000); // Change image every 3 seconds
+        });
+    </script>
+
+</body>
+</html>
