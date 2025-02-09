@@ -21,8 +21,7 @@
             color: black;
             display: flex;
             justify-content: space-between;
-            padding: 15px 30px;
-            position: static;
+            padding: 5px 3px;
             width: 100%;
         }
 
@@ -55,7 +54,7 @@
 
         /* Menu Section */
         .menu {
-            background-color:#FF8C00 ;
+            background-color: #FF8C00;
         }
 
         .menu-items {
@@ -89,72 +88,11 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .order-btn {
-            background-color: #FF8C00;
-            color: black;
-            padding: 8px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Order Section */
-        .order {
-            background-color: #111;
-        }
-
-        .order-container {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .order label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-
-        .order input {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #FF8C00;
-            border-radius: 5px;
-        }
-
-        .order-list {
-            margin-top: 15px;
-            text-align: left;
-        }
-
-        .order button {
-            background-color: #FF8C00;
-            color: black;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        #totalPrice {
-            font-size: 18px;
-            font-weight: bold;
-            color: #FF8C00;
-            margin-top: 10px;
-        }
-
         .image-slider {
             position: relative;
             width: 100%;
             max-width: 600px;
             height: auto;
-            overflow: hidden;
         }
 
         .home-image {
@@ -192,6 +130,51 @@
             height: auto;
             border-radius: 8px;
         }
+
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider-container img {
+            width: 100%;
+            display: none;
+        }
+
+        .slider-container img.active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .slider-container img {
+                width: 100%;
+            }
+
+            .order-list {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .order button {
+                padding: 8px;
+                margin-top: 8px;
+            }
+
+            #totalPrice {
+                font-size: 16px;
+                margin-top: 8px;
+            }
+
+            .image-slider {
+                max-width: 100%;
+            }
+        }
+
+        section {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -199,12 +182,11 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="brioche.jpg" alt="BRIOCHE Logo">
+            <img src="brio.jpg" alt="BRIOCHE Logo">
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#order">Order</a></li>
             <li><a href="#adds-on">Adds On</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -213,36 +195,225 @@
     <!-- Home Section -->
     <section id="home" class="section">
         <h1>Welcome to BRIOCHE</h1>
-        <p>Delicious burgers & crispy fries, made fresh for you!</p>
-        <div class="image-slider">
-            <img src="images/br.jpg" alt="Delicious Food" class="home-image active">
-            <img src="images/beef.jpg" alt="Delicious Food" class="home-image">
-        </div>
     </section>
 
     <!-- Menu Section -->
     <section id="menu" class="menu section">
         <h2>Our Menu</h2>
+        <h3>Chicken</h3>
         <div class="menu-items">
             <div class="item">
-                <h3>Classic Beef Burger</h3>
-                <img src="single beef.jpg" alt="Classic Burger" width="150" class="menu-image">
-                <p>$5.00</p>
-                <button class="order-btn" onclick="addToOrder('Classic Burger', 5)">Order</button>
+                <h3>BBQ Wrap</h3>
+                <img src="11.jpg" alt="BBQ Wrap" width="150" class="menu-image">
+                <p>$2.75</p>
             </div>
             <div class="item">
-                <h3>Cheese Burger</h3>
-                <img src="images/cheese-burger.jpg" alt="Cheese Burger" width="150" class="menu-image">
-                <p>$6.00</p>
-                <button class="order-btn" onclick="addToOrder('Cheese Burger', 6)">Order</button>
+                <h3>Crispy Wrap</h3>
+                <img src="11.jpg" alt="Crispy Wrap" width="150" class="menu-image">
+                <p>$2.75</p>
             </div>
             <div class="item">
-                <h3>Fries</h3>
-                <img src="images/fries.jpg" alt="Fries" width="150" class="menu-image">
+                <h3>Crispy Burger / Single</h3>
+                <img src="011.jpg" alt="Crispy Burger / Single" width="150" class="menu-image">
                 <p>$3.50</p>
-                <button class="order-btn" onclick="addToOrder('Fries', 3.50)">Order</button>
             </div>
-            <!-- Add more items as needed -->
+            <div class="item">
+                <h3>Garlic Chicken Burger</h3>
+                <img src="00.jpg" alt="Garlic Chicken Burger" width="150" class="menu-image">
+                <p>$3.50</p>
+            </div>
+            <div class="item">
+                <h3>Grilled Chicken Burger</h3>
+                <img src="22.jpg" alt="Grilled Chicken Burger" width="150" class="menu-image">
+                <p>$3.50</p>
+            </div>
+            <div class="item">
+                <h3>Buffalo Chicken Burger</h3>
+                <img src="011.jpg" alt="Buffalo Chicken Burger" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Dynamite Burger / Single</h3>
+                <img src="33.jpg" alt="Dynamite Burger / Single" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Maple Sriracha / Single</h3>
+                <img src="33.jpg" alt="Maple Sriracha / Single" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Crispy Burger / Double</h3>
+                <img src="44.jpg" alt="Crispy Burger / Double" width="150" class="menu-image">
+                <p>$7.00</p>
+            </div>
+            <div class="item">
+                <h3>Dynamite Burger / Double</h3>
+                <img src="55.jpg" alt="Dynamite Burger / Double" width="150" class="menu-image">
+                <p>$5.50</p>
+            </div>
+            <div class="item">
+                <h3>Maple Sriracha / Double</h3>
+                <img src="66.jpg" alt="Maple Sriracha / Double" width="150" class="menu-image">
+                <p>$5.50</p>
+            </div>
+            <div class="item">
+                <h3>Crispy Burger / Triple</h3>
+                <img src="88.jpg" alt="Crispy Burger / Triple" width="150" class="menu-image">
+                <p>$7.00</p>
+            </div>
+            <div class="item">
+                <h3>Dynamite Burger / Triple</h3>
+                <img src="99.jpg" alt="Dynamite Burger / Triple" width="150" class="menu-image">
+                <p>$7.50</p>
+            </div>
+            <div class="item">
+                <h3>Maple Sriracha Burger / Triple</h3>
+                <img src="triple.jpg" alt="Maple Sriracha Burger / Triple" width="150" class="menu-image">
+                <p>$7.50</p>
+            </div>
+            <div class="item">
+                <h3>Philly Stick</h3>
+                <img src="filly.jpg" alt="Philly Stick" width="150" class="menu-image">
+                <p>$6.00</p>
+            </div>
+            <div class="item">
+                <h3>Extra Egg</h3>
+                <img src="egg.jpg" alt="Extra Egg" width="150" class="menu-image">
+                <p>$1.00</p>
+                </div>
+        </div>
+
+        <h3>Meat</h3>
+        <div class="menu-items">
+            <div class="item">
+                <h3>Classic Burger / Single</h3>
+                <img src="m7.jpg" alt="Classic Burger / Single" width="150" class="menu-image">
+                <p>$3.50</p>
+            </div>
+            <div class="item">
+                <h3>First in Town / Single</h3>
+                <img src="m2.jpg" alt="First in Town / Single" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Hot Beef Burger / Single</h3>
+                <img src="m7.jpg" alt="Hot Beef Burger / Single" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Sloppy Joe</h3>
+                <img src="m5.jpg" alt="Sloppy Joe" width="150" class="menu-image">
+                <p>$4.00</p>
+            </div>
+            <div class="item">
+                <h3>Special Burger / Single</h3>
+                <img src="m7.jpg" alt="Special Burger / Single" width="150" class="menu-image">
+                <p>$4.50</p>
+            </div>
+            <div class="item">
+                <h3>Stuffed Burger</h3>
+                <img src="m4.jpg" alt="Stuffed Burger" width="150" class="menu-image">
+                <p>$5.00</p>
+            </div>
+            <div class="item">
+                <h3>Classic Burger / Double</h3>
+                <img src="m3.jpg" alt="Classic Burger / Double" width="150" class="menu-image">
+                <p>$5.50</p>
+            </div>
+            <div class="item">
+                <h3>Special Burger / Double</h3>
+                <img src="m2.jpg" alt="Special Burger / Double" width="150" class="menu-image">
+                <p>$5.50</p>
+            </div>
+            <div class="item">
+                <h3>Classic Burger / Triple</h3>
+                <img src="m1.jpg" alt="Classic Burger / Triple" width="150" class="menu-image">
+                <p>$7.00</p>
+            </div>
+            <div class="item">
+                <h3>Hot Beef Burger / Triple</h3>
+                <img src="m1.jpg" alt="Hot Beef Burger / Triple" width="150" class="menu-image">
+                <p>$7.00</p>
+            </div>
+            <div class="item">
+                <h3>Special Burger / Triple</h3>
+                <img src="m1.jpg" alt="Special Burger / Triple" width="150" class="menu-image">
+                <p>$7.50</p>
+            </div>
+        </div>
+        <h3>Fries</h3>
+        <div class="menu-items">
+            <div class="item">
+                <h3>Crispy Topped</h3>
+                <img src="crispy topped.jpg" alt="Crispy Topped" width="150" class="menu-image">
+                <p>$3.50</p>
+            </div>
+            <div class="item">
+                <h3>Regular Fries</h3>
+                <img src="f6.jpg" alt="Regular Fries" width="150" class="menu-image">
+                <p>$1.00</p>
+            </div>
+            <div class="item">
+                <h3>Cheesy Fries</h3>
+                <img src="f5.jpg" alt="Cheesy Fries" width="150" class="menu-image">
+                <p>$1.50</p>
+            </div>
+            <div class="item">
+                <h3>Dynamite Fries</h3>
+                <img src="f6.jpg" alt="Dynamite Fries" width="150" class="menu-image">
+                <p>$1.50</p>
+            </div>
+            <div class="item">
+                <h3>Masala Fries</h3>
+                <img src="f4.jpg" alt="Masala Fries" width="150" class="menu-image">
+                <p>$1.50</p>
+            </div>
+            <div class="item">
+                <h3>Chicken Strips</h3>
+                <img src="f2.jpg" alt="Chicken Strips" width="150" class="menu-image">
+                <p>$2.50</p>
+            </div>
+            <div class="item">
+                <h3>Chicken Bites</h3>
+                <img src="f3.jpg" alt="Chicken Bites" width="150" class="menu-image">
+                <p>$3.00</p>
+            </div>
+            <div class="item">
+                <h3>Chicken Strips Plus</h3>
+                <img src="f1.jpg" alt="Chicken Strips Plus" width="150" class="menu-image">
+                <p>$3.50</p>
+            </div>
+            <div class="item">
+                <h3>Chicken Pop Corn</h3>
+                <img src="f1.jpg" alt="Chicken Strips Plus" width="150" class="menu-image">
+                <p>$3.00</p>
+            </div>
+            <div class="item">
+                <h3>Chicken Bites </h3>
+                <img src="bites.jpg" alt="Chicken Strips Plus" width="150" class="menu-image">
+                <p>$3.00</p>
+            </div>
+        </div>
+        <h3>Drinks</h3>
+        <div class="menu-items">
+            <div class="item">
+                <h3>Soft Drinks</h3>
+                <img src="Soft Drinks.jpg" alt="Coca Cola" width="150" class="menu-image">
+                <p>Coca Cola - Miranda - Pepsi - Sprite - Shani - 7up - Fanta</p>
+                <p>$1.00</p>
+            </div>
+            <div class="item">
+                <h3>Water</h3>
+                <img src="Water.jpg" alt="Water" width="150" class="menu-image">
+                <p>$0.50</p>
+            </div>
+            <div class="item">
+                <h3>Milkshakes</h3>
+                <img src="milk shakes.jpg" alt="Milkshake" width="150" class="menu-image">
+                <p>Oreo-Nut Caramel- Choc Melt- Lotus - Strawberry</p>
+                <p>$3.00</p>
+            </div>
         </div>
     </section>
 
@@ -253,47 +424,29 @@
         <div class="adds-on-items">
             <div class="item">
                 <h3>Garlic Sauce</h3>
-                <img src="images/garlic-sauce.jpg" alt="Garlic Sauce" width="150" class="adds-on-image">
-                <p>$1.00</p>
+                <img src="s3.jpg" alt="Garlic Sauce" width="150" class="adds-on-image">
+                <p>$0.5</p>
             </div>
             <div class="item">
                 <h3>Cocktail Sauce</h3>
-                <img src="images/cocktail-sauce.jpg" alt="Cocktail Sauce" width="150" class="adds-on-image">
-                <p>$1.50</p>
+                <img src="s1.jpg" alt="Cocktail Sauce" width="150" class="adds-on-image">
+                <p>$0.5</p>
             </div>
             <div class="item">
                 <h3>Dynamite Sauce</h3>
-                <img src="images/dynamite-sauce.jpg" alt="Dynamite Sauce" width="150" class="adds-on-image">
-                <p>$2.00</p>
+                <img src="s2.jpg" alt="Dynamite Sauce" width="150" class="adds-on-image">
+                <p>$0.5</p>
             </div>
             <div class="item">
                 <h3>Honey</h3>
-                <img src="images/honey.jpg" alt="Honey" width="150" class="adds-on-image">
-                <p>$1.75</p>
+                <img src="s4.jpg" alt="Honey" width="150" class="adds-on-image">
+                <p>$0.5</p>
             </div>
             <div class="item">
                 <h3>Maple Sriracha Sauce</h3>
-                <img src="images/maple-sriracha-sauce.jpg" alt="Maple Sriracha Sauce" width="150" class="adds-on-image">
-                <p>$2.25</p>
+                <img src="s5.jpg" alt="Maple Sriracha Sauce" width="150" class="adds-on-image">
+                <p>$0.5</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Order Section -->
-    <section id="order" class="order section">
-        <h2>Place Your Order</h2>
-        <div class="order-container">
-            <label for="customerName">Name:</label>
-            <input type="text" id="customerName" name="customerName">
-
-            <label for="customerNumber">Number:</label>
-            <input type="text" id="customerNumber" name="customerNumber" pattern="\d{10,}" title="Please enter at least 10 digits">
-
-            <h3>Your Order:</h3>
-            <ul id="orderList" class="order-list"></ul>
-
-            <p id="totalPrice">Total Price: $0.00</p>
-            <button onclick="placeOrder()">Submit Order</button>
         </div>
     </section>
 
@@ -301,6 +454,7 @@
     <section id="contact" class="contact section">
         <h2>Contact Us</h2>
         <p>Feel free to reach out to us for any inquiries or feedback!</p>
+        <p>0614200217</p>
         <!-- Add your contact form or contact details here -->
     </section>
 
@@ -388,6 +542,21 @@
             }
 
             setInterval(showNextImage, 3000); // Change image every 3 seconds
+        });
+
+        // Hide navbar on scroll down, show on scroll up
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector(".navbar");
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add("hidden");
+            } else {
+                // Scroll up
+                navbar.classList.remove("hidden");
+            }
+            lastScrollTop = scrollTop;
         });
     </script>
 
