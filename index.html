@@ -53,45 +53,45 @@
 				:root {
 					--background: 0 0% 100%; /* White background */
 					--foreground: 0 0% 0%; /* Black text */
-					--card: 33 100% 50%; /* Orange background for cards */
+					--card: 38 87% 55%; /* #f3ad1d background for cards */
 					--card-foreground: 0 0% 0%; /* Black text for cards */
-					--popover: 33 100% 50%; /* Orange background for popovers */
+					--popover: 54 100% 50%; /* #f3ad1d background for popovers */
 					--popover-foreground: 0 0% 0%; /* Black text for popovers */
-					--primary: 33 100% 50%; /* Orange primary color */
+					--primary: 54 100% 50%; /* #f3ad1d primary color */
 					--primary-foreground: 0 0% 0%; /* Black text for primary */
 					--secondary: 0 0% 0%; /* Black secondary color */
-					--secondary-foreground: 33 100% 50%; /* Orange text for secondary */
+					--secondary-foreground: 54 100% 50%; /* #f3ad1d text for secondary */
 					--muted: 0 0% 90%; /* Light gray for muted elements */
 					--muted-foreground: 0 0% 0%; /* Black text for muted elements */
-					--accent: 33 100% 50%; /* Orange accent color */
+					--accent: 54 100% 50%; /* Yellow accent color */
 					--accent-foreground: 0 0% 0%; /* Black text for accent */
 					--destructive: 0 84.2% 60.2%; /* Red for destructive elements */
 					--destructive-foreground: 0 0% 98%; /* White text for destructive */
 					--border: 0 0% 0%; /* Black border */
 					--input: 0 0% 0%; /* Black input border */
-					--ring: 33 100% 50%; /* Orange ring */
+					--ring: 54 100% 50%; /* Yellow ring */
 					--radius: 0.5rem; /* Border radius */
 				}
 				.dark {
 					--background: 0 0% 0%; /* Black background */
-					--foreground: 33 100% 50%; /* Orange text */
+					--foreground: 54 100% 50%; /* Yellow text */
 					--card: 0 0% 0%; /* Black background for cards */
-					--card-foreground: 33 100% 50%; /* Orange text for cards */
+					--card-foreground: 54 100% 50%; /* Yellow text for cards */
 					--popover: 0 0% 0%; /* Black background for popovers */
-					--popover-foreground: 33 100% 50%; /* Orange text for popovers */
-					--primary: 33 100% 50%; /* Orange primary color */
+					--popover-foreground: 54 100% 50%; /* Yellow text for popovers */
+					--primary: 54 100% 50%; /* #f3ad1d primary color */
 					--primary-foreground: 0 0% 0%; /* Black text for primary */
-					--secondary: 33 100% 50%; /* Orange secondary color */
+					--secondary: 54 100% 50%; /* Yellow secondary color */
 					--secondary-foreground: 0 0% 0%; /* Black text for secondary */
 					--muted: 0 0% 15%; /* Dark gray for muted elements */
-					--muted-foreground: 33 100% 50%; /* Orange text for muted elements */
-					--accent: 33 100% 50%; /* Orange accent color */
+					--muted-foreground: 54 100% 50%; /* Yellow text for muted elements */
+					--accent: 54 100% 50%; /* Yellow accent color */
 					--accent-foreground: 0 0% 0%; /* Black text for accent */
 					--destructive: 0 62.8% 30.6%; /* Dark red for destructive elements */
 					--destructive-foreground: 0 0% 98%; /* White text for destructive */
-					--border: 33 100% 50%; /* Orange border */
-					--input: 33 100% 50%; /* Orange input border */
-					--ring: 33 100% 50%; /* Orange ring */
+					--border: 54 100% 50%; /* Yellow border */
+					--input: 54 100% 50%; /* Yellow input border */
+					--ring: 54 100% 50%; /* Yellow ring */
 				}
 			}
 		</style>
@@ -100,23 +100,25 @@
     <div class="bg-background p-6">
       <div class="flex flex-col items-center">
         <img aria-hidden="true" alt="Dilek logo" src="brioche logo.jpg" class="mb-4" />
-        <h2 class="text-2xl font-bold text-primary">OUR MENU</h2>
+        <!-- Updated OUR MENU color -->
+        <h2 class="text-2xl font-bold text-black">OUR MENU</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         <!-- Chicken Section -->
-        <a href="chicken.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition">
+        <a href="chicken.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition text-center">
           <h3 class="text-lg font-semibold text-secondary">Chicken</h3>
         </a>
+        
         <!-- Meat Section -->
-        <a href="meat.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition">
+        <a href="meat.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition text-center">
           <h3 class="text-lg font-semibold text-secondary">Meat</h3>
         </a>
          <!-- Fries Section -->
-         <a href="fries.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition">
+         <a href="fries.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition text-center">
             <h3 class="text-lg font-semibold text-secondary">Fries & More</h3>
           </a>
         <!-- Adds On Section -->
-        <a href="adds-on.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition">
+        <a href="adds-on.html" class="bg-card p-4 border border-border rounded-lg shadow-md hover:shadow-lg transition text-center">
           <h3 class="text-lg font-semibold text-secondary">Drinks</h3>
         </a>
        
